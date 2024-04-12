@@ -35,7 +35,7 @@ const Signup = () => {
           name="username"
           onChange={handleChange}
           value={data.username}
-          placeholder="Enter Username"
+          placeholder="Enter Username here"
           className="  outline-none "
         />
         <input
