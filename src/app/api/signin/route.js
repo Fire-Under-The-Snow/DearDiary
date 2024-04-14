@@ -4,30 +4,34 @@ import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 connecttoDB()
 export async function POST(req){
-    
     try {
         const reqbody=await req.json()
-        const{username,email,password}=reqbody
-    
+        const{email,password}=reqbody
         const user=await User.findOne({email})
-        if (user)
+        if (!user)
         {
             return NextResponse.json(
-                {error:"user already exist"},
+                {error:"user doesnot exist"},
                 {status:400}
             )
         }
-        const salt=await bcryptjs.genSalt(10)
-        const hashedpass=await bcryptjs.hash(password,salt)
         
-        const newUser=new User({username,email,password:hashedpass})
-        const savedUser=await newUser.save()
-
+        const validpassword= await bcryptjs.compare(password,user.password)
+        if(!validpassword)
+        {
+            return NextResponse.json(
+                {
+                    error:"the password is not valid "
+                },
+                {
+                    status:400
+                }
+            )
+        }
         return NextResponse.json(
             {
-                message:"User created succeess",
+                message:"Login success",
                 success:true,
-                savedUser
             }
         )
         } catch (error) {
