@@ -1,10 +1,12 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const Signup = () => { 
-   const router=useRouter()
+const Signup = () => {
+  const router = useRouter();
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -17,45 +19,78 @@ const Signup = () => {
       [name]: value,
     }));
   };
-  const checkit =async () => {
+  const checkit = async () => {
     try {
-      const res=await axios.post("/api/signup",data)
-      console.log("signup done",res.data)
-      router.push("/signin")
+      const res = await axios.post("/api/signup", data);
+      console.log("signup done", res.data);
+      router.push("/signin");
     } catch (error) {
-      console.log("error for signup",error.message)
+      console.log("error for signup", error.message);
     }
   };
+  //to do (images and all)
   return (
-    <div className="flex justify-center items-center w-full h-screen ">
-      <div className=" flex-col">
-        <p className="">Signup to DearDiary</p>
-        <input
-          type="text"
-          name="username"
-          onChange={handleChange}
-          value={data.username}
-          placeholder="Enter Username here"
-          className="  outline-none "
-        />
-        <input
-          type="text"
-          name="email"
-          onChange={handleChange}
-          value={data.email}
-          placeholder="Enter Email"
-          className="  outline-none "
-        />
-        <input
-          type="text"
-          name="password"
-          onChange={handleChange}
-          value={data.password}
-          placeholder="Enter Password"
-          className="  outline-none "
-        />
-        <button onClick={checkit}>Submit</button>
+    <div className=" text-white bg-black flex justify-center items-center w-full h-screen ">
+      <div className=" hidden xl:block  h-screen bg-no-repeat w-1/2  object-cover max-sm:hidden  flex-1 border-2">
+        <div className=" flex items-center justify-center h-[300px] border-2 border-red-300">
+          <Image
+            src="/vercel.svg"
+            width={300}
+            height={300}
+            draggable="false"
+            className="  bg-red-300"
+          />
+        </div>
       </div>
+
+      <div className=" flex-1  h-screen flex items-center justify-center border-2 border-black flex-col w-[720px]">
+        <div className=" mb-4">
+          <p className=" text-left font-bold text-4xl">DearDairy</p>
+          <p className=" text-gray-300 text-sm">
+            Welcome to the World of journal and healing
+          </p>
+        </div>
+        <div className=" space-y-3 p-3 flex items-center justify-center border-2 border-black flex-col">
+          <p className=" font-semibold text-sm">Signup to DearDiary</p>
+          <input
+            type="text"
+            name="username"
+            onChange={handleChange}
+            value={data.username}
+            placeholder="Username"
+            className=" bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
+          />
+          <input
+            type="text"
+            name="email"
+            onChange={handleChange}
+            value={data.email}
+            placeholder="Email"
+            className=" bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
+          />
+          <input
+            type="password"
+            name="password"
+            onChange={handleChange}
+            value={data.password}
+            placeholder="Password"
+            className="  bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
+          />
+          <button
+            className=" px-6 py-2 rounded-lg  bg-blue-500 hover:bg-blue-700 transition"
+            onClick={checkit}
+          >
+            Submit
+          </button>
+         
+         
+        </div>
+        <div className=" mb-4">
+          <p className=" text-left text-xs">Already have an Account? <Link className=" font-bold underline" href="/signin"> Login</Link></p>
+          
+        </div>
+      </div>
+      
     </div>
   );
 };
