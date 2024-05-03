@@ -7,6 +7,7 @@ import React, { useState } from "react";
 
 const Signup = () => {
   const router = useRouter();
+  const[errors,seterrors]=useState(false)
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -23,8 +24,10 @@ const Signup = () => {
     try {
       const res = await axios.post("/api/signup", data);
       console.log("signup done", res.data);
+      seterrors(false)
       router.push("/signin");
     } catch (error) {
+      seterrors(true)
       console.log("error for signup", error.message);
     }
   };
@@ -87,7 +90,7 @@ const Signup = () => {
         </div>
         <div className=" mb-4">
           <p className=" text-left text-xs">Already have an Account? <Link className=" font-bold underline" href="/signin"> Login</Link></p>
-          
+            {errors?<p className=" text-center text-xs text-red-400" >Something went wrong</p>:<p></p>}
         </div>
       </div>
       
