@@ -1,10 +1,13 @@
 "use client";
 import axios from "axios";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Signup = () => { 
    const router=useRouter()
+   const[errors,seterrors]=useState(false)
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -20,10 +23,12 @@ const Signup = () => {
   const checkit =async () => {
     try {
       setloading(true)
+      seterrors(false)
       const res=await axios.post("/api/signin",data)
       console.log("signin done",res.data)
       router.push("/")
     } catch (error) {
+      seterrors(true)
       console.log("error for signin",error.message)
     }
     finally{
@@ -31,16 +36,37 @@ const Signup = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center w-full h-screen ">
-      <div className=" flex-col">
-        <p className="">Signin to DearDiary</p>
+      <div className=" text-white bg-black flex justify-center items-center w-full h-screen ">
+      <div className=" hidden xl:block  h-screen bg-no-repeat w-1/2  object-cover max-sm:hidden  flex-1 border-2">
+        <div className=" flex items-center justify-center h-[300px] border-2 border-red-300">
+          <Image
+            src="/vercel.svg"
+            width={300}
+            height={300}
+            draggable="false"
+            className="  bg-red-300"
+          />
+        </div>
+      </div>
+
+
+
+      <div className=" flex-1  h-screen flex items-center justify-center border-2 border-black flex-col w-[720px]">
+        <div className=" mb-4">
+          <p className=" text-left font-bold text-4xl">DearDairy</p>
+          <p className=" text-gray-300 text-sm">
+            Welcome to the World of journal and healing
+          </p>
+        </div>
+        <div className=" space-y-3 p-3 flex items-center justify-center border-2 border-black flex-col">
+          <p className=" font-semibold text-sm">Signup to DearDiary</p>
         <input
           type="text"
           name="email"
           onChange={handleChange}
           value={data.email}
           placeholder="Enter Email"
-          className="  outline-none "
+          className="  bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
         />
         <input
           type="text"
@@ -48,9 +74,16 @@ const Signup = () => {
           onChange={handleChange}
           value={data.password}
           placeholder="Enter Password"
-          className="  outline-none "
-        />
-        <button onClick={checkit}>Submit</button>
+          className="  bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
+        /> 
+        <button   className=" px-6 py-2 rounded-lg  bg-blue-500 hover:bg-blue-700 transition"
+         onClick={checkit}>{loading?"Loading...":"Submit"}</button>
+        {errors?<p className=" text-center text-xs text-red-400" >Wrong Field Tried</p>:<p></p>}
+      </div>
+      <div className=" mb-4">
+          <p className=" text-left text-xs">Dont have an Account? <Link className=" font-bold underline" href="/signup"> Signup</Link></p>
+            {errors?<p className=" text-center text-xs text-red-400" >Try Again</p>:<p></p>}
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import React, { useState } from "react";
 const Signup = () => {
   const router = useRouter();
   const[errors,seterrors]=useState(false)
+  const[loading,setloading]=useState(false)
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -22,6 +23,7 @@ const Signup = () => {
   };
   const checkit = async () => {
     try {
+      setloading(true)
       const res = await axios.post("/api/signup", data);
       console.log("signup done", res.data);
       seterrors(false)
@@ -29,6 +31,8 @@ const Signup = () => {
     } catch (error) {
       seterrors(true)
       console.log("error for signup", error.message);
+    } finally{
+      setloading(false)
     }
   };
   //to do (images and all)
@@ -83,7 +87,7 @@ const Signup = () => {
             className=" px-6 py-2 rounded-lg  bg-blue-500 hover:bg-blue-700 transition"
             onClick={checkit}
           >
-            Submit
+            {loading?"Loading..":"Submit"}
           </button>
          
          
