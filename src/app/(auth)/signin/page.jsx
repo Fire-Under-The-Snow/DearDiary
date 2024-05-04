@@ -78,7 +78,6 @@ const Signup = () => {
         /> 
         <button   className=" px-6 py-2 rounded-lg  bg-blue-500 hover:bg-blue-700 transition"
          onClick={checkit}>{loading?"Loading...":"Submit"}</button>
-        {errors?<p className=" text-center text-xs text-red-400" >Wrong Field Tried</p>:<p></p>}
       </div>
       <div className=" mb-4">
           <p className=" text-left text-xs">Dont have an Account? <Link className=" font-bold underline" href="/signup"> Signup</Link></p>

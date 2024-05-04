@@ -2,6 +2,8 @@ import { connecttoDB } from "@/dbconfig/dbconfig"
 import User from "@/models/usersdetail.model"
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
+import { encrypt } from "@/lib/lib";
+import { cookies } from "next/headers";
 connecttoDB()
 export async function POST(req){
     try {
@@ -28,6 +30,9 @@ export async function POST(req){
                 }
             )
         }
+        const expires = new Date(Date.now() + 30 * 60 * 1000);
+        const session = await encrypt({ user, expires });
+        cookies().set("session", session, { expires, httpOnly: true });
         return NextResponse.json(
             {
                 message:"Login success",
