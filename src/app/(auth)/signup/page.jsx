@@ -1,4 +1,5 @@
 "use client";
+import Gmail from "@/components/gmail/Gmail";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,18 +39,7 @@ const Signup = () => {
   //to do (images and all)
   return (
     <div className=" text-white bg-black flex justify-center items-center w-full h-screen ">
-      <div className=" hidden xl:block  h-screen bg-no-repeat w-1/2  object-cover max-sm:hidden  flex-1 border-2">
-        <div className=" flex items-center justify-center h-[300px] border-2 border-red-300">
-          <Image
-            src="/vercel.svg"
-            width={300}
-            height={300}
-            draggable="false"
-            className="  bg-red-300"
-          />
-        </div>
-      </div>
-
+      
       <div className=" flex-1  h-screen flex items-center justify-center border-2 border-black flex-col w-[720px]">
         <div className=" mb-4">
           <p className=" text-left font-bold text-4xl">DearDairy</p>
@@ -97,7 +87,11 @@ const Signup = () => {
             {errors?<p className=" text-center text-xs text-red-400" >Something went wrong</p>:<p></p>}
         </div>
       </div>
-      
+      <div className=" hidden xl:block  h-screen w-fit  max-sm:hidden  flex-1 ">
+        
+         <Gmail/>
+        
+      </div>
     </div>
   );
 };
