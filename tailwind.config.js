@@ -7,10 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      height: {
+        'delekheight': 'calc(100vh - 80px)', // Assuming your navbar height is 60px
       },
     },
   },

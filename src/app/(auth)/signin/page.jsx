@@ -64,8 +64,13 @@ const Signup = () => {
           placeholder="Enter Password"
           className="  bg-black text-xs px-6 py-3 rounded-lg outline-none border-[1px] "
         /> 
-        <button   className=" px-6 py-2 rounded-lg  bg-blue-500 hover:bg-blue-700 transition"
-         onClick={checkit}>{loading?"Loading...":"Submit"}</button>
+       <button 
+  className={`${loading ? "animate-pulse" : ""} px-6 py-2 rounded-lg bg-blue-500 hover:bg-blue-700 transition`}
+  onClick={checkit}
+>
+  {loading ? "Loading..." : "Submit"}
+</button>
+
       </div>
       <div className=" mb-4">
           <p className=" text-left text-xs">Dont have an Account? <Link className=" font-bold underline" href="/signup"> Signup</Link></p>

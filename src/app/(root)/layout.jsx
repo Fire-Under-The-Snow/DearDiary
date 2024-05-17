@@ -11,15 +11,17 @@ export const metadata = {
   description: "A Next Generation AI emotion Diary",
 };
 
-export default function RootLayout({ children }) {
+export default  function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className=" flex h-screen">
-          {/* <Navbar/> */}
-         
+      
+        <div className=" flex flex-col ">
+        <Navbar/>
+         <div className=" h-delekheight flex">
         <Leftpanel/>
         {children}
+        </div>
         {/* <Footer/> */}
         </div>
       
