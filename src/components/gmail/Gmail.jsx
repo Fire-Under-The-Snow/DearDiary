@@ -48,20 +48,20 @@ const Gmail = () => {
   
 ]
   return (
-    <div className="flex overflow-hidden bottom-24 right-0 text-black rounded-l-2xl bg-white absolute w-[720px]  h-[540px] ">
+    <div className="flex overflow-hidden bottom-7 right-0 text-gray-500 rounded-l-2xl bg-[#1C1C1C] absolute w-[720px]  h-[540px] ">
       {/* leftpanel */}
-      <div className="flex-2 rounded-l-2xl bg-[#e6e6e6] p-2 h-full w-40">
+      <div className="flex-2 rounded-l-2xl bg-[#1F2022] p-2 h-full w-40">
         <div className=" flex justify-between">
           <div className=" flex space-x-1">
             <div className=" bg-red-500 rounded-full h-3 w-3" />
             <div className=" bg-yellow-500 rounded-full h-3 w-3" />
             <div className=" bg-green-500 rounded-full h-3 w-3" />
           </div>
-          <div className=" bg-white rounded-full flex items-center justify-center text-xs h-5 w-5">
+          <div className=" bg-[#1F2022] rounded-full flex items-center justify-center text-xs h-5 w-5">
             <GoPlus />
           </div>
         </div>
-        <div className=" mt-4 flex gap-2 items-center w-full bg-white rounded-md text-xs text-gray-400 px-2 py-1">
+        <div className=" mt-4 flex gap-2 items-center w-full bg-[#68696A] rounded-md text-xs text-gray-400 px-2 py-1">
           <IoMdSearch />
           search
         </div>
@@ -85,7 +85,7 @@ const Gmail = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex items-center ml-2 gap-1 text-[10px] cursor-pointer font-medium text-gray-400"
+              className="flex items-center ml-2 gap-1 text-[10px] cursor-pointer font-medium transition hover:text-white text-gray-400"
             >
               {item}
             </div>
@@ -96,20 +96,21 @@ const Gmail = () => {
           <div className=" text-sm font-semibold flex justify-between items-center p-4">
             <p>#Dear Diary</p>
             <div className=" flex gap-1">
-              <div className=" flex space-x-2 border-2 px-2 py-1 rounded-md"><AiOutlineMessage /><IoIosArrowRoundDown /></div>
-              <div className=" flex space-x-2 border-2 px-2 py-1 text-gray-400 rounded-md text-xs">All</div>
+              <div className=" flex space-x-2 border-[1px] items-center px-2 py-1 rounded-md"><AiOutlineMessage /><IoIosArrowRoundDown /></div>
+              <div className=" flex space-x-2 border-[1px] px-2 py-1 font-normal text-gray-400 rounded-md text-xs"><p>All</p></div>
             </div>
           </div>
-          <div className=" bg-[#f3f3f3] p-2 text-gray-500 text-[10px] flex justify-around items-center">
+          <div className=" bg-[#1F2022] p-2 text-gray-500 text-[10px] flex justify-around items-center">
             <p>Author</p>
             <p>Snippet</p>
           </div>
           {
             maindata.map((item,index)=>(
-              <div key={index} className=" mt-2 py-2 rounded-md hover:bg-[#E6E6E6] transition flex justify-around text-[10px] items-center ml-2">
-            <div className=" flex gap-2 items-center">
+              <div key={index} className=" mt-2 py-2 rounded-md hover:bg-[#1F2022] transition flex justify-around text-[10px] items-center ml-2">
             <CiLock />
-            <p className=" text-purple-500 font-semibold">{item.name}</p>
+            <div className=" flex gap-2 justify-around  items-center">
+            
+            <p className=" text-blue-300 font-semibold">{item.name}</p>
             </div>
            <div>
            {item.message}

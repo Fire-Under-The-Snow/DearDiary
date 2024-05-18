@@ -5,10 +5,10 @@ const About = () => {
   const words = ["Secure", "Community", "Healing", "Peace"];
   return (
     <div className=" bg-[#1C1C1C] w-[90%] h-delekheight flex justify-center items-center">
-    <div className="text-4xl mx-auto  text-neutral-400">
+    <div className="text-xl mx-auto  text-neutral-400">
     For
     <FlipWords words={words} /> <br />
-    <div className=" text-lg">
+    <div className=" text-sm">
     Write with Dear Diary: A Project by Tenzin Delek
     <div className= ' absolute bottom-20'>
     <Searchinput />
