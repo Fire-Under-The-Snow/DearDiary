@@ -37,14 +37,14 @@ const Leftpanel = () => {
         Daily notes
       </div>
       </Link>
-      <Link href="/">
+      <Link href="/About">
      
       <div className=" flex hover:bg-slate-50 transition p-2 rounded-md items-center gap-1 text-md cursor-pointer font-medium text-gray-500">
         <MdNotes />
         Quote of the Day
       </div>
       </Link>
-      <Link href="/About">
+      <Link href="/">
       
       <div className=" flex hover:bg-slate-50 transition p-2 rounded-md items-center gap-1 text-md cursor-pointer font-medium text-gray-500">
         <FaCircleNodes />
