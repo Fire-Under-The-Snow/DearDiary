@@ -17,9 +17,14 @@ export default  function RootLayout({ children }) {
       <body className={inter.className}>
       
         <div className=" flex flex-col ">
-        <Navbar/>
+         
+          <Navbar/>
+         
+       
          <div className=" h-delekheight flex">
+         <div className=" hidden md:flex">
         <Leftpanel/>
+        </div>
         {children}
         </div>
         {/* <Footer/> */}

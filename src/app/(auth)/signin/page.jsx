@@ -24,12 +24,12 @@ const Signup = () => {
   const checkit =async () => {
     try {
       setloading(true)
-      seterrors(false)
+      seterrors("")
       const res=await axios.post("/api/signin",data)
       console.log("signin done",res.data)
       router.push("/")
     } catch (error) {
-      seterrors(true)
+      seterrors(error.response?.data?.error || "Something went wrong. Please try again.")
       console.log("error for signin",error.message)
     }
     finally{
@@ -74,7 +74,7 @@ const Signup = () => {
       </div>
       <div className=" mb-4">
           <p className=" text-left text-xs">Dont have an Account? <Link className=" font-bold underline" href="/signup"> Signup</Link></p>
-            {errors?<p className=" text-center text-xs text-red-400" >Try Again</p>:<p></p>}
+          {errors && <p className="text-center text-xs text-red-400">{errors}</p>}
         </div>
       </div>
       <div className=" hidden xl:block  h-screen w-fit  max-sm:hidden  flex-1 ">
