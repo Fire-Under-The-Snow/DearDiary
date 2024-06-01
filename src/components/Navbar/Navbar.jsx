@@ -5,6 +5,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { CiLock } from "react-icons/ci";
+import Link from 'next/link';
 const Navbar =async () => {
   const session = await getSession();
   return (
@@ -13,7 +14,8 @@ const Navbar =async () => {
           <div className=" text-sm font-semibold flex justify-between items-center p-4">
             <p>#Dear Diary</p>
             <pre>Welcome {session?.user.username}</pre>
-            <div className=" flex items-center gap-1">
+            <div className=" flex items-center gap-6">
+              <Link href="/docs"><p className=' className=" border-2 p-2 rounded-lg border-[#E6E6E6] transition hover:text-gray-200 text-gray-500"'>Docs</p></Link>
             <form
         action={async () => {
           "use server";

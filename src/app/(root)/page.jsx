@@ -1,5 +1,4 @@
-import { AiOutlineMessage } from "react-icons/ai";
-import { IoIosArrowRoundDown } from "react-icons/io";
+
 import { CiLock } from "react-icons/ci";
 import { getSession} from '@/lib/lib';
 import { redirect } from 'next/navigation';
