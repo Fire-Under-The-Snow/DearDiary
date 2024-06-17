@@ -7,6 +7,7 @@ export const GET = async (request) => {
     await connecttoDB();
 
     const posts = await Quote.find();
+    console.log(posts)
     return NextResponse.json(posts);
   } catch (err) {
     console.log(err);
