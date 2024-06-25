@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request){
-const user=' ';
-if(!user)
-  {
-    return NextResponse.redirect(new URL('/',request.url));
+export function middleware(request) {
+  const user = " ";
+  if (!user) {
+    return NextResponse.redirect(new URL("/", request.url));
   }
 }
 export const config = {
-  matcher: ['/signin', '/signup'], // Match signin and signup routes
+  matcher: ["/signin", "/signup"], // Match signin and signup routes
 };
 // import { NextResponse } from 'next/server';
 // import { getSession } from './src/lib/lib'; // Assuming this fetches the session

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Test = () => {
-  return (
-    <div className=' text-green-400'>Test freeg</div>
-  )
-}
+  return <div className=" text-green-400">Test freeg</div>;
+};
 
-export default Test
+export default Test;

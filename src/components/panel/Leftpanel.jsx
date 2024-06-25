@@ -49,18 +49,16 @@ const Leftpanel = () => {
       </div>
 
       <div className=" mt-4">
-      {
-        Links.map((data,index)=>(
+        {Links.map((data, index) => (
           <div key={index}>
             <Link href={data.srcs}>
-          <div className=" flex hover:bg-slate-50 transition p-2 rounded-md items-center gap-1 text-sm cursor-pointer font-medium text-gray-500">
-            {data.Logo}
-            {data.name}
+              <div className=" flex hover:bg-slate-50 transition p-2 rounded-md items-center gap-1 text-sm cursor-pointer font-medium text-gray-500">
+                {data.Logo}
+                {data.name}
+              </div>
+            </Link>
           </div>
-        </Link>
-             </div>
-        ))
-      }
+        ))}
       </div>
 
       <p className="ml-2 text-white font-semibold mt-10 text-base ">

@@ -11,9 +11,15 @@ const DiaryCard = () => {
           Happy
         </div>
       </div>
-      <p className=" hover:text-white text-start w-full  font-semibold transition">My College year</p>
-      <p className=" text-xs text-gray-500">It as about the last day of my college</p>
-      <button className=" bg-[#2e2e2e] text-sm px-4 py-1 rounded-md transition hover:text-gray-300">View</button>
+      <p className=" hover:text-white text-start w-full  font-semibold transition">
+        My College year
+      </p>
+      <p className=" text-xs text-gray-500">
+        It as about the last day of my college
+      </p>
+      <button className=" bg-[#2e2e2e] text-sm px-4 py-1 rounded-md transition hover:text-gray-300">
+        View
+      </button>
     </div>
   );
 };

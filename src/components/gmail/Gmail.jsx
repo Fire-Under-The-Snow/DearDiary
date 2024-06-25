@@ -16,37 +16,40 @@ const Gmail = () => {
     "Reflect spring planning",
     "Top in mind",
   ];
-  const maindata=[{
-    name :"Tenzin Delek",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },
-  {
-    name :"Tenzin Aryan",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },{
-    name :"Tenzin Tsamphel",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },{
-    name :"Tenzin Yarphel",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },{
-    name :"Tenzin Sherab",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },
-  {
-    name :"Tenzin Sherab",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },
-  {
-    name :"Tenzin Sherab",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },
-  {
-    name :"Tenzin Delek",
-    message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-  },
-  
-]
+  const maindata = [
+    {
+      name: "Tenzin Delek",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Aryan",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Tsamphel",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Yarphel",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Sherab",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Sherab",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Sherab",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+    {
+      name: "Tenzin Delek",
+      message: " Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    },
+  ];
   return (
     <div className="flex overflow-hidden bottom-7 right-0 text-gray-500 rounded-l-2xl bg-[#1C1C1C] absolute w-[720px]  h-[540px] ">
       {/* leftpanel */}
@@ -80,7 +83,9 @@ const Gmail = () => {
           </div>
         </div>
 
-        <p className="ml-2 text-gray-700 font-semibold mt-2 text-[10px] ">PINNED NOTES</p>
+        <p className="ml-2 text-gray-700 font-semibold mt-2 text-[10px] ">
+          PINNED NOTES
+        </p>
         <div className=" mt-2 space-y-4">
           {data.map((item, index) => (
             <div
@@ -93,33 +98,35 @@ const Gmail = () => {
         </div>
       </div>
       <div className=" flex-1">
-          <div className=" text-sm font-semibold flex justify-between items-center p-4">
-            <p>#Dear Diary</p>
-            <div className=" flex gap-1">
-              <div className=" flex space-x-2 border-[1px] items-center px-2 py-1 rounded-md"><AiOutlineMessage /><IoIosArrowRoundDown /></div>
-              <div className=" flex space-x-2 border-[1px] px-2 py-1 font-normal text-gray-400 rounded-md text-xs"><p>All</p></div>
+        <div className=" text-sm font-semibold flex justify-between items-center p-4">
+          <p>#Dear Diary</p>
+          <div className=" flex gap-1">
+            <div className=" flex space-x-2 border-[1px] items-center px-2 py-1 rounded-md">
+              <AiOutlineMessage />
+              <IoIosArrowRoundDown />
+            </div>
+            <div className=" flex space-x-2 border-[1px] px-2 py-1 font-normal text-gray-400 rounded-md text-xs">
+              <p>All</p>
             </div>
           </div>
-          <div className=" bg-[#1F2022] p-2 text-gray-500 text-[10px] flex justify-around items-center">
-            <p>Author</p>
-            <p>Snippet</p>
-          </div>
-          {
-            maindata.map((item,index)=>(
-              <div key={index} className=" mt-2 py-2 rounded-md hover:bg-[#1F2022] transition flex justify-around text-[10px] items-center ml-2">
+        </div>
+        <div className=" bg-[#1F2022] p-2 text-gray-500 text-[10px] flex justify-around items-center">
+          <p>Author</p>
+          <p>Snippet</p>
+        </div>
+        {maindata.map((item, index) => (
+          <div
+            key={index}
+            className=" mt-2 py-2 rounded-md hover:bg-[#1F2022] transition flex justify-around text-[10px] items-center ml-2"
+          >
             <CiLock />
             <div className=" flex gap-2 justify-around  items-center">
-            
-            <p className=" text-blue-300 font-semibold">{item.name}</p>
+              <p className=" text-blue-300 font-semibold">{item.name}</p>
             </div>
-           <div>
-           {item.message}
-           </div>
+            <div>{item.message}</div>
           </div>
-            ))
-          }
-          <div></div>
-
+        ))}
+        <div></div>
       </div>
     </div>
   );

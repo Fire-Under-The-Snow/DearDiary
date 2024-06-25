@@ -12,11 +12,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className=" h-screen w-full">
-        {children}
-        </div>
-       
-        </body>
+        <div className=" h-screen w-full">{children}</div>
+      </body>
     </html>
   );
 }

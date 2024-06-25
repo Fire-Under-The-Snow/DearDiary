@@ -1,10 +1,9 @@
 {
-    "docs":"My Docs",
-    "InstallationGuide":"Installation Guide",
-    "github_link": {
-        "title": "TenzDelek",
-        "href": "https://github.com/TenzDelek",
-        "newWindow": true
-        
-      }
+  "docs": "My Docs",
+  "InstallationGuide": "Installation Guide",
+  "github_link": {
+    "title": "TenzDelek",
+    "href": "https://github.com/TenzDelek",
+    "newWindow": true
   }
+}

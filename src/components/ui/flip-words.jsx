@@ -4,11 +4,7 @@ import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import { cn } from "@/utils/cn";
 let interval;
 
-export const FlipWords = ({
-  words,
-  duration = 3000,
-  className,
-}) => {
+export const FlipWords = ({ words, duration = 3000, className }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
 
   useEffect(() => {
