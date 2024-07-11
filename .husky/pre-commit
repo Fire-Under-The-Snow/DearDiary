@@ -1,19 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo '🏗️👷 Styling, testing your project before committing'
 
-# Debugging Information
-echo "Current directory: $(pwd)"
-echo "npm version: $(npm --version)"
-echo "Node version: $(node --version)"
-echo "Prettier version: $(npx prettier --version)"
-
-# Check Prettier standards directly with npx
-npx prettier --check . || (
-    echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
-            Prettier Check Failed. Run npm run format, add changes and try commit again.';
-    false
-)
-
-echo '✅ Prettier check passed'
+npx lint-staged
