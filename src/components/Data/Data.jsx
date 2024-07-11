@@ -1,22 +1,19 @@
 import React from "react";
 import SmallQuote from "./SmallQuote";
-const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/take", {
-    next: { revalidate: 3600 },
-  });
-  if (!res.ok) {
-    throw new Error("Something went wrong");
-  }
-  return res.json();
-};
+import { connecttoDB } from "@/dbconfig/dbconfig";
+import Quote from "@/models/quote.model";
+
 const Data = async () => {
-  const posts = await getData();
-  console.log(posts);
+  await connecttoDB();
+
+  const posts = await Quote.find().lean();
+  const cleanPosts = posts.map(({ _id, __v, ...post }) => post);
+
   return (
     <div>
-      {posts.map((post, index) => (
+      {cleanPosts.map((post, index) => (
         <div key={index}>
-          <SmallQuote post={post} />{" "}
+          <SmallQuote post={post} />
         </div>
       ))}
     </div>
