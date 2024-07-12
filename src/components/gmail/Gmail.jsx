@@ -7,7 +7,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { MdNotes } from "react-icons/md";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { CiLock } from "react-icons/ci";
-const Gmail = () => {
+const Gmaill = () => {
   const data = [
     "Core Projects",
     "Reflect Landing Page",
@@ -132,4 +132,4 @@ const Gmail = () => {
   );
 };
 
-export default Gmail;
+export default Gmaill;

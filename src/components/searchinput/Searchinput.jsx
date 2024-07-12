@@ -20,7 +20,7 @@ const Searchinput = () => {
           name="datas"
           className="w-64 bg-[#1F2022] px-2 py-4 text-sm text-white outline-none"
           type="text"
-          placeholder="Enter your Quote"
+          placeholder="Enter your Quote here"
         />
         <button>
           <IoSend className="hover:text-white transition" />

@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "../../utils/cn";
 let interval;
 
-export const FlipWords = ({ words, duration = 3000, className }) => {
+export const FlipWords1 = ({ words, duration = 3000, className }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
         }}
         className={cn(
           " z-0 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
-          className
+          className,
         )}
         key={currentWord}
       >

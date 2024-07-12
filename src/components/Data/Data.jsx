@@ -1,6 +1,6 @@
 import React from "react";
 import SmallQuote from "./SmallQuote";
-import { connecttoDB } from "@/dbconfig/dbconfig";
+import { connecttoDB } from "../../dbconfig/dbconfig";
 import Quote from "@/models/quote.model";
 
 const Data = async () => {
