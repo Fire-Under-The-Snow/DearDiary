@@ -11,7 +11,7 @@ export default function Page() {
             Welcome to the World of journal and healing
           </p>
         </div>
-        <div className=" space-y-3 p-3 flex items-center justify-center border-2 border-black flex-col">
+        <div className=" space-y-3 w-[26rem] rounded-md bg-white h-72 flex items-center justify-center border-2 border-black flex-col">
           <SignIn />
         </div>
       </div>
